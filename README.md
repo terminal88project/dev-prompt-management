@@ -1,263 +1,337 @@
+
+
+***
+
 ```markdown
-<div dir="rtl">
+# 🤖 AI Blueprint System — راهنمای کامل
 
-# 🧠 AI Dev Prompt System
-
-یک سیستم پرامپت ساختاریافته برای استفاده از هوش مصنوعی به عنوان معمار نرم‌افزار ارشد در پروژه‌های توسعه واقعی.
-
-</div>
+> سیستمی برای کار حرفه‌ای با هوش مصنوعی در پروژه‌های نرم‌افزاری
 
 ---
 
-# 🧠 AI Dev Prompt System
+## 🧠 منطق کلی سیستم
 
-A structured prompt system for using AI as a Senior Software Architect on real development projects.
+این سیستم مثل یک **«بسته شغلی»** برای هوش مصنوعی عمل می‌کند.
+هر بار که AI را صدا می‌زنی، سه فایل را باهم می‌فرستی تا AI بداند:
+
+| فایل | هدف |
+|---|---|
+| `core-directives.md` | **کی است** — قوانین رفتاری ثابت |
+| `project-context.md` | **پروژه چیست** — معماری و وضعیت فعلی |
+| `task-injector.md` | **الان چه می‌خواهی** — تسک فعلی |
 
 ---
 
-<div dir="rtl">
+## 📄 فایل اول: `core-directives.md`
 
-## 📁 ساختار فایل‌ها
+> ⛔ این فایل را **هرگز تغییر نده.** مغز قوانین AI است.
 
-</div>
+### مهم‌ترین بخش‌ها
 
-## 📁 File Structure
+**SECTION 1 — ROLE**
+```text
+"You are a Senior Software Architect..."
+```
+AI را مجبور می‌کند مثل یک معمار ارشد رفتار کند، نه یک چت‌بات معمولی.
+
+---
+
+**MEMORY CONSTRAINT**
+```text
+"You have ZERO memory of any previous conversation"
+```
+هشدار می‌دهد که AI حافظه‌ای از session قبل ندارد؛
+پس باید **همیشه** فایل‌ها را دوباره attach کنی.
+
+---
+
+**SECTION 3 — MANDATORY PRE-TASK CHECKLIST (C1–C6)**
+
+قبل از نوشتن هر کدی، AI باید ۶ مرحله بررسی کند.
+مثال: `C2` یعنی ابتدا فایل‌های OFF-LIMITS را شناسایی کن.
+
+---
+
+**SECTION 6 — BEHAVIOR RULES**
+
+```text
+✅ اولین خط هر code block = مسیر کامل فایل به‌صورت comment
+✅ کد ۱۰۰٪ کامل — عبارت "// rest of code here" ممنوع است
+❌ استفاده از کتابخانه‌ای خارج از TECH STACK → اول بپرس
+```
+این قوانین جلوی کدهای ناقص یا حدسی را می‌گیرند.
+
+---
+
+**SECTION 8 — RESPONSE FORMAT**
+
+AI همیشه با این ساختار ثابت جواب می‌دهد:
 
 ```
-├── core-directives.md      # قوانین رفتاری AI / AI behavior rules
-├── project-context.md      # بلوپرینت پروژه / Project blueprint template
-├── task-injector.md        # تمپلیت تسک / Task template
-├── question-injector.md    # تمپلیت سوال / Question template
-└── README.md
-```
-
----
-
-<div dir="rtl">
-
-## 🔧 فایل‌ها چه کاری می‌کنند
-
-| فایل | هدف | تغییر می‌کند؟ |
-|------|-----|---------------|
-| `core-directives.md` | تعریف نقش، قوانین رفتاری، فرمت خروجی AI | به ندرت |
-| `project-context.md` | اطلاعات کامل پروژه — stack، schema، استانداردها | هر session |
-| `task-injector.md` | توضیح تسک برای AI | هر تسک |
-| `question-injector.md` | پرسیدن سوال فنی از AI | هر سوال |
-
-</div>
-
-## 🔧 What Each File Does
-
-| File | Purpose | Changes? |
-|------|---------|----------|
-| `core-directives.md` | Defines AI role, behavior rules, output format | Rarely |
-| `project-context.md` | Full project info — stack, schema, standards | Each session |
-| `task-injector.md` | Describes a task for the AI | Each task |
-| `question-injector.md` | Ask the AI a technical question | Each question |
-
----
-
-<div dir="rtl">
-
-## 🚀 شروع سریع
-
-### ۱. یک بار (راه‌اندازی اولیه)
-`project-context.md` را کپی کرده و برای پروژه‌ات پر کن:
-
-- **S1** — اطلاعات پروژه
-- **S3** — tech stack دقیق با ورژن
-- **S4** — معماری (فقط یک گزینه انتخاب کن، بقیه را حذف کن)
-- **S6** — استانداردهای کدنویسی
-- **S7** — schema دیتابیس واقعی
-- **S8** — قرارداد API
-- **S9** — احراز هویت
-- **CURRENT STATE** — وضعیت فعلی پروژه
-
-### ۲. برای هر تسک
-1. یک مکالمه جدید در AI باز کن
-2. هر سه فایل را attach کن: `core-directives.md` + `project-context.md` + `task-injector.md`
-3. `task-injector.md` را پر کن و بفرست
-4. State Update خروجی AI را در `project-context.md` کپی کن
-
-### ۳. برای سوال فنی
-1. یک مکالمه جدید باز کن
-2. `core-directives.md` + `project-context.md` + `question-injector.md` را attach کن
-3. `question-injector.md` را پر کن و بفرست
-
-</div>
-
-## 🚀 Quick Start
-
-### 1. Once (Initial Setup)
-Copy `project-context.md` and fill it for your project:
-
-- **S1** — Project identity
-- **S3** — Exact tech stack with versions
-- **S4** — Architecture (choose ONE option, delete the rest)
-- **S6** — Coding standards
-- **S7** — Your actual database schema
-- **S8** — API contract
-- **S9** — Auth strategy
-- **CURRENT STATE** — Current project status
-
-### 2. For Each Task
-1. Open a **new conversation** in your AI
-2. Attach all three: `core-directives.md` + `project-context.md` + `task-injector.md`
-3. Fill in `task-injector.md` and send
-4. Copy the State Update from AI output into `project-context.md`
-
-### 3. For a Technical Question
-1. Open a **new conversation**
-2. Attach: `core-directives.md` + `project-context.md` + `question-injector.md`
-3. Fill in `question-injector.md` and send
-
----
-
-<div dir="rtl">
-
-## 📋 حالت‌های AI
-
-| حالت | چه زمانی | خروجی |
-|------|---------|-------|
-| `Feature` | اضافه کردن قابلیت جدید | Plan + Code + Test + State Update |
-| `Bug Fix` | رفع باگ | Plan + Code + Test + State Update |
-| `Refactor` | بهبود کد بدون تغییر رفتار | Plan + Code + Test + State Update |
-| `Performance` | بهینه‌سازی | Plan + Code + Test + State Update |
-| `Security` | رفع مشکل امنیتی | Plan + Code + Test + State Update |
-| `Question` | سوال فنی | پاسخ مستقیم، بدون کد |
-
-</div>
-
-## 📋 AI Modes
-
-| Mode | When to use | Output |
-|------|------------|--------|
-| `Feature` | Adding new functionality | Plan + Code + Test + State Update |
-| `Bug Fix` | Fixing a bug | Plan + Code + Test + State Update |
-| `Refactor` | Improving code without changing behavior | Plan + Code + Test + State Update |
-| `Performance` | Optimization | Plan + Code + Test + State Update |
-| `Security` | Security fix | Plan + Code + Test + State Update |
-| `Question` | Technical question | Direct answer, no code |
-
----
-
-<div dir="rtl">
-
-## ⚠️ قوانین مهم
-
-- **هر تسک = یک مکالمه جدید** — AI حافظه ندارد
-- **project-context.md را بعد از هر تسک آپدیت کن** — این تنها source of truth است
-- **S4 را با slash options رها نکن** — یک گزینه انتخاب کن و بقیه را حذف کن
-- **S7 را با schema واقعی پر کن** — جدول‌های نمونه را حذف کن
-- **project-context.md را public نکن** اگر شامل اطلاعات حساس است
-
-</div>
-
-## ⚠️ Important Rules
-
-- **One task = one new conversation** — AI has zero memory
-- **Update project-context.md after each task** — it's the only source of truth
-- **Don't leave S4 with slash options** — pick one value, delete the rest
-- **Fill S7 with your real schema** — delete the placeholder tables
-- **Don't make project-context.md public** if it contains sensitive architecture details
-
----
-
-<div dir="rtl">
-
-## 🔄 چرخه کار
-
-</div>
-
-## 🔄 Workflow Cycle
-
-```
-┌─────────────────────────────────────────────────┐
-│  New Conversation                               │
-│                                                 │
-│  Attach:                                        │
-│  ├── core-directives.md   (always)              │
-│  ├── project-context.md   (always)              │
-│  └── task-injector.md     (task)                │
-│      OR question-injector.md  (question)        │
-│                                                 │
-│  Fill injector → Send → Get output              │
-│                                                 │
-│  Copy STATE UPDATE → project-context.md         │
-└─────────────────────────────────────────────────┘
+Step 0: ASSUMPTIONS
+Step 1: TASK CONFIRMATION
+Step 2: BLOCKERS       ← اگر چیزی مبهم بود اینجا متوقف می‌شود
+Step 3: PLAN
+Step 4: CODE
+Step 5: HOW TO TEST
+Step 6: STATE UPDATE   ← این را باید کپی کنی توی project-context
 ```
 
 ---
 
-<div dir="rtl">
+## 📄 فایل دوم: `project-context.md`
 
-## 🗂️ چند پروژه موازی
+> این فایل را **یک بار برای هر پروژه پر کن** و بعد از هر تسک آپدیت کن.
 
-برای هر پروژه یک فایل `project-context` جداگانه داشته باش:
+### بخش S1 — IDENTITY (شناسنامه پروژه)
 
-```
-core-directives.md          ← مشترک بین همه پروژه‌ها
-task-injector.md            ← مشترک بین همه پروژه‌ها
-question-injector.md        ← مشترک بین همه پروژه‌ها
+```markdown
+# ❌ قالب خالی (اشتباه)
+| Name | |
+| Type | (Web App / Bot / Mobile...) |
 
-projects/
-├── project-alpha.md        ← blueprint پروژه alpha
-├── project-beta.md         ← blueprint پروژه beta
-└── project-gamma.md        ← blueprint پروژه gamma
-```
-
-</div>
-
-## 🗂️ Multiple Projects
-
-Keep a separate `project-context` file for each project:
-
-```
-core-directives.md          ← shared across all projects
-task-injector.md            ← shared across all projects
-question-injector.md        ← shared across all projects
-
-projects/
-├── project-alpha.md        ← blueprint for project alpha
-├── project-beta.md         ← blueprint for project beta
-└── project-gamma.md        ← blueprint for project gamma
+# ✅ پر شده (درست) — مثال ربات تلگرام
+| Name              | TechNewsBot                         |
+| Codename / Slug   | tech-news-bot                       |
+| Blueprint Version | 2026-02-25-v1                       |
+| Type              | Bot                                 |
+| One-line Goal     | ارسال خبر تکنولوژی به کانال تلگرام |
+| Core Problem      | جمع‌آوری دستی خبر وقت‌گیر است     |
+| Target Users      | دولوپرهای فارسی‌زبان               |
+| Business Model    | Freemium                            |
+| Stage             | MVP                                 |
+| Priority          | High                                |
 ```
 
 ---
 
-<div dir="rtl">
+### بخش S3 — TECH STACK
 
-## 🤖 سازگاری با AI
+```markdown
+### Languages
+- Primary: Python 3.12
 
-این سیستم با مدل‌های زیر تست شده:
+### Backend
+- Framework + version: python-telegram-bot 21.0
+- Runtime: Python
+- API Style: WebSocket (Telegram Webhook)
 
-- ✅ Claude 3.5 / 3.7 (Sonnet, Opus)
-- ✅ GPT-4o / GPT-4.1
-- ✅ Gemini 1.5 Pro / 2.0
-- ⚠️ مدل‌های کوچک‌تر ممکن است Section 5 را به درستی اجرا نکنند
-
-</div>
-
-## 🤖 AI Compatibility
-
-This system has been tested with:
-
-- ✅ Claude 3.5 / 3.7 (Sonnet, Opus)
-- ✅ GPT-4o / GPT-4.1
-- ✅ Gemini 1.5 Pro / 2.0
-- ⚠️ Smaller models may not correctly enforce Section 5 rules
+### Database
+- Primary DB + version: PostgreSQL 16
+- ORM / Query Builder: SQLAlchemy 2.0
+- Migration Tool: Alembic
+```
 
 ---
 
-<div dir="rtl">
+### بخش S4 — ARCHITECTURE
 
-## 📄 لایسنس
+> ⚠️ مهم‌ترین بخش: فقط **یک گزینه** انتخاب کن، بقیه را **پاک کن**.
 
-MIT — آزادانه استفاده، تغییر و توزیع کن.
+```markdown
+# ❌ اشتباه (چند گزینه باقی مانده)
+- Overall Pattern: (Monolith / Microservices / Serverless)
 
-</div>
+# ✅ درست (یک گزینه انتخاب شده)
+- Overall Pattern: Monolith
+- Design Pattern: Repository
+- Service Communication: Direct calls
+- Backend Architecture: Service Layer
+- Dependency Injection: No
+- Monorepo vs Polyrepo: Monorepo
+```
 
-## 📄 License
+---
 
-MIT — Free to use, modify, and distribute.
+### بخش S5 — FILE STRUCTURE
+
+```
+project-root/
+├── bot/
+│   ├── handlers/      → هندلرهای دستورات تلگرام
+│   ├── services/      → منطق اصلی کسب‌وکار
+│   └── models/        → مدل‌های SQLAlchemy
+├── db/
+│   └── migrations/    → فایل‌های Alembic
+├── main.py            → نقطه ورود
+└── .env               → متغیرهای محیطی
+```
+
+---
+
+### بخش S7 — DATABASE SCHEMA
+
+```markdown
+TABLE: users
+  id          BIGSERIAL     PRIMARY KEY
+  telegram_id BIGINT        NOT NULL UNIQUE
+  username    VARCHAR(64)
+  is_premium  BOOLEAN       DEFAULT FALSE
+  created_at  TIMESTAMPTZ   NOT NULL DEFAULT NOW()
+
+TABLE: news_items
+  id          BIGSERIAL     PRIMARY KEY
+  title       TEXT          NOT NULL
+  url         TEXT          NOT NULL UNIQUE
+  sent_at     TIMESTAMPTZ   NULL
+  created_at  TIMESTAMPTZ   NOT NULL DEFAULT NOW()
+```
+
+---
+
+### بخش CURRENT STATE — وضعیت فعلی
+
+> این بخش بعد از هر تسک آپدیت می‌شود.
+
+```markdown
+Last Task ID: TASK-000
+Last Updated: 2026-02-25
+Project Status: FRESH START — no features implemented yet.
+
+✅ COMPLETED
+- Nothing completed yet.
+
+🔄 IN PROGRESS
+- Nothing in progress.
+
+⏳ BACKLOG
+- TASK-001: /start command with welcome message
+- TASK-002: News fetcher from RSS
+
+🐛 KNOWN BUGS
+- No known bugs yet.
+
+🔒 OFF-LIMITS
+- .env file — never modify
+```
+
+---
+
+## 📄 فایل سوم: `task-injector.md`
+
+> هر بار که می‌خواهی یک ویژگی بسازی، این فایل را با آن تسک پر کن.
+
+```markdown
+## 🎯 TASK HEADER
+
+| Field    | Value                                   |
+|----------|-----------------------------------------|
+| Task ID  | TASK-001                                |
+| Name     | Add /start command with welcome message |
+| Mode     | Feature                                 |
+| Priority | High                                    |
+
+## 🔗 CONTEXT
+- Depends on Task: None
+- Continues from: None
+- Related Files: main.py
+- Last Session Note: Fresh start — no prior session
+
+## 📋 DESCRIPTION
+وقتی کاربر /start را می‌زند:
+1. اطلاعاتش در جدول users ذخیره شود (یا اگر وجود داشت آپدیت شود)
+2. پیام خوش‌آمد فارسی با دکمه‌های inline نمایش داده شود
+
+## ✅ EXPECTED OUTPUT
+- /start → ذخیره user در DB + پیام خوش‌آمد
+- اگر user قبلاً ثبت شده، پیام نمایش داده شود ولی دوباره insert نشود
+
+## 🏁 ACCEPTANCE CRITERIA
+- [ ] User جدید در جدول users ذخیره می‌شود
+- [ ] /start برای user موجود خطا نمی‌دهد (upsert)
+- [ ] پیام شامل دکمه‌های inline است
+
+## 📁 FILES
+
+### Files to Create
+- bot/handlers/start.py         → هندلر دستور /start
+- bot/services/user_service.py  → منطق ذخیره user
+
+### DO NOT TOUCH
+- .env — اطلاعات حساس
+
+## ⚠️ EDGE CASES TO HANDLE
+- اگر telegram_id تکراری بود (upsert نه insert)
+- اگر username کاربر None بود
+- اگر اتصال DB قطع بود
+
+## 🚫 AVOID
+- Raw SQL نزن، فقط SQLAlchemy ORM
+- فایل main.py را تغییر نده
+```
+
+---
+
+## 📄 فایل چهارم: `question-injector.md`
+
+> برای سوال یا دیباگ استفاده می‌شود، **نه کدنویسی**.
+
+```markdown
+## ❓ QUESTION
+
+| Field    | Value                                    |
+|----------|------------------------------------------|
+| Priority | Blocking — can't proceed without answer |
+| Type     | Technical                                |
+
+Question:
+آیا بهتر است برای Telegram Webhook از FastAPI استفاده کنم
+یا همان python-telegram-bot Application را مستقیم اجرا کنم؟
+تفاوت performance در ۱۰۰۰ user همزمان چیست؟
+
+## 🔗 CONTEXT FOR THIS QUESTION
+- Related Blueprint Sections: TECH STACK, ARCHITECTURE
+- Related Files: main.py
+- Background:
+  ربات الان با polling کار می‌کند. می‌خواهم به webhook تبدیل کنم.
+  سرور Ubuntu 22.04 با 2GB RAM است.
+```
+
+---
+
+## 🔄 چرخه کامل کار
+
+### راه‌اندازی اولیه (یک بار)
+
+1. ریپو را clone کن
+2. فایل `project-context.md` را برای پروژه‌ات پر کن
+3. بخش S4 را پاک کن و فقط **یک گزینه** برای هر فیلد نگه دار
+4. بخش S7 را با schema واقعی پروژه‌ات جایگزین کن
+
+---
+
+### هر تسک جدید
+
+```
+مرحله ۱ → task-injector.md را با تسک جدید پر کن
+مرحله ۲ → یک چت جدید در AI باز کن
+مرحله ۳ → این ۳ فایل را attach کن:
+            core-directives.md + project-context.md + task-injector.md
+مرحله ۴ → AI جواب می‌دهد با: PLAN + CODE + TEST + STATE UPDATE
+مرحله ۵ → بخش STATE UPDATE خروجی AI را کپی کن
+            و در بخش CURRENT STATE فایل project-context.md جایگزین کن
+```
+
+---
+
+### هر سوال یا دیباگ
+
+```
+مرحله ۱ → question-injector.md را پر کن
+مرحله ۲ → یک چت جدید باز کن
+مرحله ۳ → این ۳ فایل را attach کن:
+            core-directives.md + project-context.md + question-injector.md
+```
+
+---
+
+## ⚠️ مهم‌ترین قوانین
+
+| قانون | توضیح |
+|---|---|
+| هر تسک = چت جدید | AI حافظه ندارد؛ هر بار فایل‌ها را attach کن |
+| بعد از هر تسک `project-context` را آپدیت کن | بخش STATE UPDATE خروجی AI را کپی کن |
+| S4 را با slash options رها نکن | AI گزینه‌های پاک‌نشده را به عنوان «خالی» تلقی می‌کند |
+| S7 را با schema واقعی پر کن | جدول‌های نمونه را حذف کن |
+| `project-context.md` را public نکن | شامل معماری حساس پروژه است |
 ```
